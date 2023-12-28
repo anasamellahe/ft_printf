@@ -6,7 +6,7 @@
 /*   By: anamella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:16:27 by anamella          #+#    #+#             */
-/*   Updated: 2023/12/26 12:36:44 by anamella         ###   ########.fr       */
+/*   Updated: 2023/12/27 13:13:05 by anamella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_print_char(va_list ap, int *len, t_flag *flag, int *size)
 	}
 	else
 	{
-		ft_print_width(&size[0], len, (' ' * (flag[2].bool_flag == 0))
-			+ ('0' * (flag[2].bool_flag != 0)));
+		ft_print_width(&size[0], len, (' ' * (flag[2].bool_flag == 0)) + ('0'
+				* (flag[2].bool_flag != 0)));
 		ft_putcchar(c, len);
 	}
 	return (1);
@@ -44,9 +44,9 @@ int	print_p(va_list ap, int *len, t_flag *flag, int *size)
 		print_sign(flag, len, nbr, 'p');
 	if ((flag[2].bool_flag && !flag[0].bool_flag) || (!flag[2].bool_flag
 			&& !flag[0].bool_flag))
-		ft_print_width(&size[0], len, (' ' * !(flag[2].bool_flag
-					* (size[1] == -1))) + ('0' * (flag[2].bool_flag
-					* (size[1] == -1))));
+		ft_print_width(&size[0], len, (' ' * !(flag[2].bool_flag * (size[1]
+						== -1))) + ('0' * (flag[2].bool_flag * (size[1]
+						== -1))));
 	if ((!flag[2].bool_flag || size[1] != -1) && !flag[0].bool_flag)
 		print_sign(flag, len, nbr, 'p');
 	ft_print_precision(c, &size[1], len, 'p');
@@ -97,9 +97,9 @@ int	print_forma(t_flag *flag, long int nbr, int *size, char type)
 		print_sign(flag, &len, nbr, type);
 	if ((flag[2].bool_flag && !flag[0].bool_flag) || (!flag[2].bool_flag
 			&& !flag[0].bool_flag))
-		ft_print_width(&size[0], &len, (' ' * !(flag[2].bool_flag
-					* (size[1] == -1))) + ('0' * (flag[2].bool_flag
-					* (size[1] == -1))));
+		ft_print_width(&size[0], &len, (' ' * !(flag[2].bool_flag * (size[1]
+						== -1))) + ('0' * (flag[2].bool_flag * (size[1]
+						== -1))));
 	if ((!flag[2].bool_flag || size[1] != -1) && !flag[0].bool_flag)
 		print_sign(flag, &len, nbr, type);
 	ft_print_precision(c, &size[1], &len, type);

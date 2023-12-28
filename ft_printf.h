@@ -6,18 +6,15 @@
 /*   By: anamella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 04:59:15 by anamella          #+#    #+#             */
-/*   Updated: 2023/12/26 20:41:15 by anamella         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:31:56 by anamella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <ctype.h>
 # include <stdarg.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_flag

@@ -6,7 +6,7 @@
 /*   By: anamella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:33:51 by anamella          #+#    #+#             */
-/*   Updated: 2023/12/26 21:13:53 by anamella         ###   ########.fr       */
+/*   Updated: 2023/12/27 13:27:32 by anamella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,23 @@ int	count_width(t_flag *flag, long int nbr, int *size, char type)
 {
 	int	count;
 	int	c;
-	
-	printf("size[0] == %d size[1] == %d\n", size[0], size[1]);
+
 	c = ft_count(((nbr > 0) - (nbr < 0)) * nbr, type);
 	count = 0;
-	if ((flag[1].bool_flag || nbr < 0) && !(type == 'x' || type == 'X')
-		&& ((((nbr > 0) - (nbr < 0)) * nbr) > 0 || size[1] > 0))
+	if ((flag[1].bool_flag || nbr < 0 || flag[4].bool_flag) && !(type == 'x'
+			|| type == 'X') && ((((nbr > 0) - (nbr < 0)) * nbr) >= 0
+			|| size[1] > 0))
 		count++;
-	if (flag[3].bool_flag && (type == 'x' || type == 'X')
-		&& ((((nbr > 0) - (nbr < 0)) * nbr) > 0 || size[1] > 0))
+	if (flag[3].bool_flag && (type == 'x' || type == 'X') && (((nbr > 0)
+				- (nbr < 0)) * nbr) > 0)
 		count += 2;
 	if (size[1] > c && (nbr > 0 || size[1] > 0))
 		count += size[1];
-	if (size[1] <= c && (((nbr > 0) + (nbr < 0))
-			* nbr > 0 || size[1] > 0 || size[1] == -1))
+	if (size[1] <= c && (((nbr > 0) - (nbr < 0)) * nbr > 0 || size[1] > 0
+			|| size[1] == -1))
 		count += c;
 	if (type == 'p')
 		count += 2;
-	printf("count == %d\n", count);
 	return (count);
 }
 

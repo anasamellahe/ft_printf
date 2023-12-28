@@ -6,7 +6,7 @@
 /*   By: anamella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:04:54 by anamella          #+#    #+#             */
-/*   Updated: 2023/12/26 12:35:50 by anamella         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:49:18 by anamella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int	ft_print_per(va_list ap, int *len, t_flag *flag, int *size)
 	}
 	else
 	{
-		ft_print_width(&size[0], len, (' ' * (flag[2].bool_flag == -1))
-			+ ('0' * (flag[2].bool_flag != 0)));
+		ft_print_width(&size[0], len, (' ' * !flag[2].bool_flag) + ('0'
+				* flag[2].bool_flag));
 		ft_putcchar(c, len);
 	}
 	return (1);
